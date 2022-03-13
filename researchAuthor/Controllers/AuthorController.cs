@@ -11,14 +11,19 @@ namespace researchAuthor.Controllers
     {
         private readonly pubsContext _db;
 
-        public AuthorController(pubsContext pubs)
+        public AuthorController(pubsContext db)
         {
-            _db = pubs;
+            _db = db;
         }
         public IActionResult Index()
         {
+            // Strongly Typed
             IEnumerable<Author> objAuthorList = _db.Authors;
             return View(objAuthorList);
+
+            // Weak Typed
+            //var objAuthorList = _db.Authors.ToList();
+            //return View();
         }
     }
 }

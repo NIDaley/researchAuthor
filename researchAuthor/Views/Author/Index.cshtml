@@ -3,17 +3,30 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Index Author</h1>
 
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
-            Select Author
+            <th>
+                Select Author
+            </th>
         </tr>
     </thead>
     <tbody>
-        while(var obj in Model)
+        @foreach (var obj in Model)
         {
+        <tr>
+            <td width="30%">
+                @obj.AuFname
+            </td>
+            <td width="30%">
+                @obj.AuLname
+            </td>
+            <td width="30%">
+                @obj.AuId
+            </td>
+        </tr>
         }
     </tbody>
 </table>
